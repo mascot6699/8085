@@ -1,0 +1,7 @@
+
+MVI A, 52H
+STA 4000H 
+
+LXI H,4001H 
+MVI M,0AH 
+HLT 
