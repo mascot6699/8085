@@ -1,0 +1,26 @@
+LXI h,2700
+MVI c 05
+MVI b 00
+MVI a 00
+CALL sum
+STA 2500
+MVI c 05
+MOV a,b
+MVI b,00
+LXI h 2701
+CALL sum
+STA 2501
+MOV a,b
+STA 2502
+HLT
+sum:ADD m
+JC cr
+nxt:INX h
+INX h
+DCR c
+JNZ sum
+RET
+cr:INR B
+JMP nxt
+
+
